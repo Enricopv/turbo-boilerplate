@@ -1,3 +1,6 @@
+## Note:
+Shout out to this [gist](https://gist.github.com/sibelius/8ca62bab78ee9644ae5caffb9f1b1ef4) for making life easier. 
+
 # Turborepo Boiler Plate
 
 - Includes Next.js, Remix, Expo, and React Native projects
