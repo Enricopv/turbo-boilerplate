@@ -19,7 +19,11 @@
       "**/@react-native-community",
       "**/@react-native-community/**",
       "**/@babel/runtime",
-      "**/@babel/runtime/**"
+      "**/@babel/runtime/**",
+      "**/ui-native",
+      "**/ui-native/**",
+      "**/metro-*",
+      "**/metro-*/**"
     ]
   },
   "scripts": {

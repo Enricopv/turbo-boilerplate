@@ -18,7 +18,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-
+import {Button} from 'ui-native';
 import {
   Colors,
   DebugInstructions,
@@ -69,6 +69,7 @@ const App = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        <Button />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
