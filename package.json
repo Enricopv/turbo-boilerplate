@@ -15,7 +15,11 @@
       "**/@expo",
       "**/@expo/**",
       "**/expo-*",
-      "**/expo-*/**"
+      "**/expo-*/**",
+      "**/@react-native-community",
+      "**/@react-native-community/**",
+      "**/@babel/runtime",
+      "**/@babel/runtime/**"
     ]
   },
   "scripts": {
