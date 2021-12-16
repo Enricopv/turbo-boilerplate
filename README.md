@@ -9,7 +9,7 @@ Shout out to this [gist](https://gist.github.com/sibelius/8ca62bab78ee9644ae5caf
 
 ## NOTE FOR REACT NATIVE:
 
-In the scripts of apps/rnative/package.json you will want to make sure that `dev` is set to run either ios or android depending on your setup. By default it runs ios.
+In the scripts of `apps/rnative/package.json` you will want to make sure that `dev` is set to run either ios or android depending on your setup. By default it runs ios.
 
 ```
 apps/rnative/package.json
