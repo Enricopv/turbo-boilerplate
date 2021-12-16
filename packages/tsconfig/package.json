@@ -8,6 +8,7 @@
     "nextjs.json",
     "expojs.json",
     "react-library.json",
-    "react-native.json"
+    "react-native.json",
+    "node.json"
   ]
 }

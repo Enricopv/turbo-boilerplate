@@ -19,6 +19,7 @@ import {
   View,
 } from 'react-native';
 import {Button} from 'ui-native';
+import {requester} from 'requester';
 import {
   Colors,
   DebugInstructions,
@@ -26,7 +27,8 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-
+const url =
+  'https://api.pushshift.io/reddit/search/submission/?subreddit=nba&sort=desc&sort_type=created_utc&after=1523588521&before=1523934121&size=1000';
 const Section: React.FC<{
   title: string;
 }> = ({children, title}) => {
@@ -61,6 +63,12 @@ const App = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  React.useEffect(() => {
+    requester.get({url}).then(result => {
+      console.log(result.data.data);
+    });
+  });
 
   return (
     <SafeAreaView style={backgroundStyle}>

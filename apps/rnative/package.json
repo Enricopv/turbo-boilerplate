@@ -14,7 +14,8 @@
   "dependencies": {
     "react": "17.0.2",
     "react-native": "0.66.4",
-    "ui-native": "*"
+    "ui-native": "*",
+    "requester": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
