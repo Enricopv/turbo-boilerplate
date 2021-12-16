@@ -32,6 +32,7 @@
     "metro-react-native-babel-preset": "^0.66.2",
     "metro-resolver": "^0.66.2",
     "react-test-renderer": "17.0.2",
+    "tsconfig": "*",
     "typescript": "^4.4.4"
   },
   "resolutions": {

@@ -7,7 +7,7 @@ const pkg = require('./package.json');
 const pkgName = pkg.name;
 
 module.exports = {
-  projectRoot: path.resolve(__dirname, `apps/${pkg.name}`),
+  // projectRoot: path.resolve(__dirname, `apps/${pkg.name}`),
 
   watchFolders: [path.resolve(__dirname, 'node_modules'), ...workspaces],
 
