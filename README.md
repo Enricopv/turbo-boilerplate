@@ -25,7 +25,7 @@ In the scripts of `apps/rnative/package.json` you will want to make sure that `d
 apps/rnative/package.json
 
 scripts": {
-    "dev": "yarn ios",
+    "dev": "yarn ios", // yarn ios | yarn android | yarn start
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
