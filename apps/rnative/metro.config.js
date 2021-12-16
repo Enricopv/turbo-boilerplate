@@ -2,7 +2,9 @@ const path = require('path');
 const getWorkspaces = require('get-yarn-workspaces');
 const workspaces = getWorkspaces(__dirname);
 
-const appName = 'rnative';
+const pkg = require('./package.json');
+
+const pkgName = pkg.name;
 
 module.exports = {
   // projectRoot: path.resolve(__dirname, 'apps/rnative'),
@@ -21,7 +23,7 @@ module.exports = {
     extraNodeModules: {
       'react-native': path.resolve(
         __dirname,
-        `apps/${appName}/node_modules/react-native`,
+        `apps/${pkgName}/node_modules/react-native`,
       ),
     },
   },
