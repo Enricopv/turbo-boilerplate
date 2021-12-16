@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/reactnative.json",
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "extends": "tsconfig/react-native.json",
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
