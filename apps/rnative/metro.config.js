@@ -6,7 +6,7 @@ const blacklist = require('metro-config/src/defaults/exclusionList');
 const pkgName = pkg.name;
 
 const workspaceRoot = path.resolve(__dirname);
-
+console.log('workspaces', workspaces);
 module.exports = {
   projectRoot: workspaceRoot,
 
@@ -14,7 +14,7 @@ module.exports = {
     // * Make sure to include & watch deps at monorepo root
     path.resolve(__dirname, '../../node_modules'),
     // * Make sure to include local node_modules
-    path.resolve(__dirname, './node_modules'),
+    path.resolve(__dirname, 'node_modules'),
     ...workspaces,
   ],
 

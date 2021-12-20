@@ -1971,7 +1971,7 @@ var React = __toESM(require_react());
 import { Button as RNButton } from "react-native";
 var Button = () => {
   return /* @__PURE__ */ React.createElement(RNButton, {
-    title: "Booper"
+    title: "ui-naterf button"
   });
 };
 export {
