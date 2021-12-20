@@ -2,7 +2,7 @@ const path = require('path');
 const getWorkspaces = require('get-yarn-workspaces');
 const workspaces = getWorkspaces(__dirname);
 const pkg = require('./package.json');
-
+const blacklist = require('metro-config/src/defaults/exclusionList');
 const pkgName = pkg.name;
 
 const workspaceRoot = path.resolve(__dirname);
@@ -20,13 +20,15 @@ module.exports = {
 
   resolver: {
     // ...defaultConfig,
-    // blockList: workspaces.map(
-    //   workspacePath =>
-    //     `/${workspacePath.replace(
-    //       /\//g,
-    //       '[/\\\\]',
-    //     )}[/\\\\]node_modules[/\\\\]react-native[/\\\\].*/`,
-    // ),
+    blockList: blacklist(
+      workspaces.map(
+        workspacePath =>
+          `/${workspacePath.replace(
+            /\//g,
+            '[/\\\\]',
+          )}[/\\\\]node_modules[/\\\\]react-native[/\\\\].*/`,
+      ),
+    ),
 
     extraNodeModules: {
       'react-native': path.resolve(
