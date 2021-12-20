@@ -18,7 +18,8 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import {Button} from 'ui-native';
+// import {Button} from 'ui-native';
+import axios from 'axios';
 import {
   Colors,
   DebugInstructions,
@@ -62,6 +63,12 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  React.useEffect(() => {
+    axios.get('https://pokeapi.co/api/v2/pokemon/ditto').then(result => {
+      console.log('result', result);
+    });
+  }, []);
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
@@ -69,7 +76,7 @@ const App = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
-        <Button />
+        {/* <Button /> */}
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
