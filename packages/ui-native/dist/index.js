@@ -1982,7 +1982,7 @@ var React = __toESM(require_react());
 var import_react_native = __toESM(require("react-native"));
 var Button = () => {
   return /* @__PURE__ */ React.createElement(import_react_native.Button, {
-    title: "ui-nassster"
+    title: "ui-nas"
   });
 };
 module.exports = __toCommonJS(src_exports);
