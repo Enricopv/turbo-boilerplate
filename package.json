@@ -20,8 +20,6 @@
       "**/@expo/**",
       "**/expo-*",
       "**/expo-*/**",
-      "**/@babel/runtime",
-      "**/@babel/runtime/**",
       "**/ui-native",
       "**/ui-native/**",
       "**/metro-*",

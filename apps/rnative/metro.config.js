@@ -26,12 +26,6 @@ config.resolver.nodeModulesPath = [
   path.resolve(workspaceRoot, 'node_modules'),
 ];
 
-config.resolver.extraNodeModules = {
-  'react-native': path.resolve(__dirname, 'node_modules/react-native'),
-  // react: path.resolve(__dirname, 'node_modules/react'),
-  'ui-native': path.resolve(__dirname, '../../packages/ui-native'),
-};
-
 config.resolver.blockList = [
   /^\/Users\/enrico\/Documents\/projects\/testrepo\/packages\/config\/node_modules\/.*$/,
   /^\/Users\/enrico\/Documents\/projects\/testrepo\/packages\/scripts\/node_modules\/.*$/,
@@ -44,5 +38,11 @@ config.resolver.blockList = [
   /^\/Users\/enrico\/Documents\/projects\/testrepo\/apps\/web\/node_modules\/.*$/,
   /^\/Users\/enrico\/Documents\/projects\/testrepo\/apps\/xpo\/node_modules\/.*$/,
 ];
+
+config.resolver.extraNodeModules = {
+  'react-native': path.resolve(__dirname, 'node_modules/react-native'),
+  // react: path.resolve(__dirname, 'node_modules/react'),
+  'ui-native': path.resolve(__dirname, '../../packages/ui-native'),
+};
 
 module.exports = config;
