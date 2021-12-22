@@ -78,7 +78,7 @@ module.exports = {
       // /^\/Users\/enrico\/Documents\/projects\/testrepo\/packages\/ui-native\/node_modules\/.*$/,
       /^\/Users\/enrico\/Documents\/projects\/testrepo\/apps\/blog\/node_modules\/.*$/,
       /^\/Users\/enrico\/Documents\/projects\/testrepo\/apps\/docs\/node_modules\/.*$/,
-      // /^\/Users\/enrico\/Documents\/projects\/testrepo\/apps\/rnative\/node_modules\/.*$/,
+      /^\/Users\/enrico\/Documents\/projects\/testrepo\/apps\/rnative\/node_modules\/.*$/,
       /^\/Users\/enrico\/Documents\/projects\/testrepo\/apps\/web\/node_modules\/.*$/,
       /^\/Users\/enrico\/Documents\/projects\/testrepo\/apps\/xpo\/node_modules\/.*$/,
     ],
