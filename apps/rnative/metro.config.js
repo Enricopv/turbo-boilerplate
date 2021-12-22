@@ -7,29 +7,9 @@ const config = getDefaultConfig(__dirname);
 const projectRoot = __dirname;
 const workspaceRoot = path.resolve(__dirname, '../..');
 
-const projectPkg = require('./package.json');
-
-const projectDeps = {...projectPkg.dependencies, ...projectPkg.devDependencies};
-
-let watchDeps = [];
-for (const dep in projectDeps) {
-  // watchDeps.push(path.resolve(__dirname, 'node_modules', dep));
-  watchDeps.push(path.resolve(__dirname, '../..', 'node_modules', dep));
-}
-watchDeps = watchDeps.filter(
-  dep => !dep.includes('ui-native') && !dep.includes('rnative'),
-);
-
 config.watchFolders = [
-  // * Make sure to include & watch deps at monorepo root
-  // path.resolve(__dirname, 'node_modules'),
   path.resolve(__dirname, '../../node_modules'),
   path.resolve(__dirname, '../../packages/ui-native'),
-  path.resolve(__dirname, 'node_modules', 'react-native'),
-  // path.resolve(__dirname, '../../apps/rnative'),
-  // ...workspaces.filter(
-  //   ws => ws.includes('ui-native') || ws.includes('rnative'),
-  // ),
 ];
 
 config.resolver.nodeModulesPath = [
@@ -52,7 +32,7 @@ config.resolver.blockList = [
 
 config.resolver.extraNodeModules = {
   'react-native': path.resolve(__dirname, 'node_modules/react-native'),
-  'ui-native': path.resolve(__dirname, '..', '..', 'pacakages', 'ui-native'),
+  // 'ui-native': path.resolve(__dirname, '..', '..', 'pacakages', 'ui-native'),
 };
 
 module.exports = config;
