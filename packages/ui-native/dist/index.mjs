@@ -24,8 +24,6 @@ var __toESM = (module, isNodeMode) => {
 };
 
 // node_modules/tsup/assets/esm_shims.js
-import { fileURLToPath } from "url";
-import path from "path";
 var init_esm_shims = __esm({
   "node_modules/tsup/assets/esm_shims.js"() {
   }

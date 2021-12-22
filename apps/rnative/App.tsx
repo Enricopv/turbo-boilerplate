@@ -75,7 +75,7 @@ const App = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
-        {/* <Button /> */}
+        <Button />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
