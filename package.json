@@ -32,6 +32,7 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "clean": "turbo run clean && rm -rf node_modules",
+    "clean:watchman": "watchman watch-del-all && yarn cache clean",
     "reset": "yarn clean && yarn"
   },
   "devDependencies": {
