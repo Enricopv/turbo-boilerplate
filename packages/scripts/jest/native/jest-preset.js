@@ -1,7 +1,7 @@
 module.exports = {
   roots: ["<rootDir>"],
   transform: {
-    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.[jt]sx?$": "ts-jest",
   },
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   modulePathIgnorePatterns: [
@@ -9,5 +9,5 @@ module.exports = {
     "<rootDir>/node_modules",
     "<rootDir>/dist",
   ],
-  preset: "ts-jest",
+  preset: "react-native"
 };

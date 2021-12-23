@@ -1,7 +1,7 @@
 const {getDefaultConfig} = require('@expo/metro-config');
 const config = getDefaultConfig(__dirname);
 const path = require('path');
-
+const pkg = require("./package.json")
 const projectRoot = __dirname;
 const workspaceRoot = path.resolve(__dirname, '../..');
 
@@ -11,6 +11,9 @@ const workspaceRoot = path.resolve(__dirname, '../..');
  * - Root node_modules
  * - Other libraries in our monorepo
  */
+
+const dependencies = [...pkg.dependencies, ...pkg.devDependencies]
+
 config.watchFolders = [
   path.resolve(__dirname, '../../node_modules'),
   path.resolve(__dirname, '../../packages/ui-native'),

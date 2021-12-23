@@ -29,7 +29,8 @@
     "dev": "turbo run dev --no-cache --parallel --continue",
     "lint": "turbo run lint",
     "test": "turbo run test",
-    "clean": "turbo run clean && rm -rf node_modules",
+    "clean": "yarn clean:turbo && yarn clean:watchman",
+    "clean:turbo": "yarn turbo run clean && rm -rf node_modules",
     "clean:watchman": "watchman watch-del-all && yarn cache clean"
   },
   "devDependencies": {
