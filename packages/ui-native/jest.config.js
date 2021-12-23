@@ -1,5 +1,3 @@
-const { jestPreset: tsJest } = require("ts-jest");
-
 module.exports = {
   preset: "react-native",
   moduleDirectories: [
@@ -14,7 +12,8 @@ module.exports = {
   },
   testRegex: "(<rootDir>/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)?$",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
-
+  timers: "fake",
+  // testEnvironment: 'jsdom',
 
   globals: {
     "ts-jest": {
