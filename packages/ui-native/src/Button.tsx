@@ -1,6 +1,6 @@
-import * as React from 'react'
-import {Button as RNButton} from "react-native"
+import * as React from "react";
+import { Button as RNButton } from "react-native";
 
 export const Button = () => {
-  return <RNButton title="Booper"/>;
+  return <RNButton title="Cool Native " />;
 };

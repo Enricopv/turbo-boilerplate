@@ -19,6 +19,7 @@ import {
   View,
 } from 'react-native';
 import {Button} from 'ui-native';
+import axios from 'axios';
 import {
   Colors,
   DebugInstructions,
@@ -61,6 +62,11 @@ const App = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+  React.useEffect(() => {
+    axios.get('https://pokeapi.co/api/v2/pokemon/ditto').then(result => {
+      console.log('result', result?.data?.abilities);
+    });
+  }, []);
 
   return (
     <SafeAreaView style={backgroundStyle}>
@@ -76,7 +82,7 @@ const App = () => {
           }}>
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits. and this
+            screen and then come back to see your edits
           </Section>
           <Section title="See Your Changes">
             <ReloadInstructions />
