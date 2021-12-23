@@ -20,8 +20,6 @@
       "**/@expo/**",
       "**/expo-*",
       "**/expo-*/**",
-      "**/ui-native",
-      "**/ui-native/**",
       "**/metro-*",
       "**/metro-*/**"
     ]
@@ -32,8 +30,7 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "clean": "turbo run clean && rm -rf node_modules",
-    "clean:watchman": "watchman watch-del-all && yarn cache clean",
-    "reset": "yarn clean && yarn"
+    "clean:watchman": "watchman watch-del-all && yarn cache clean"
   },
   "devDependencies": {
     "prettier": "^2.5.1",
@@ -48,9 +45,7 @@
           ".next/**",
           "public/dist/**"
         ],
-        "dependsOn": [
-          "^build"
-        ]
+        "dependsOn": ["^build"]
       },
       "test": {
         "dependsOn": ["^build"],

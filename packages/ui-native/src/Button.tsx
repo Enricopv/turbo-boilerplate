@@ -6,5 +6,5 @@ const people = [{name:"jason", age: 333},{name:"joh", age: 32}]
 
 export const Button = () => {
   console.log('orderBY', orderBy(people, ['age'], ['asc']))
-  return <RNButton title="Cool Native 123  "/>;
+  return <RNButton title="Cool Native   "/>;
 };
