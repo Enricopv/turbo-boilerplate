@@ -1,0 +1,882 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App.tsx test renders correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "backgroundColor": "#F3F3F3",
+    }
+  }
+>
+  <RCTScrollView
+    contentInsetAdjustmentBehavior="automatic"
+    style={
+      Object {
+        "backgroundColor": "#F3F3F3",
+      }
+    }
+  >
+    <View>
+      <View
+        accessibilityIgnoresInvertColors={true}
+        style={
+          Array [
+            Object {
+              "paddingBottom": 40,
+              "paddingHorizontal": 32,
+              "paddingTop": 96,
+            },
+            Object {
+              "backgroundColor": "#F3F3F3",
+            },
+          ]
+        }
+      >
+        <Image
+          accessibilityRole="image"
+          source={
+            Object {
+              "testUri": "../Libraries/NewAppScreen/components/logo.png",
+            }
+          }
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": undefined,
+                "width": undefined,
+              },
+              Object {
+                "marginBottom": -192,
+                "marginLeft": -128,
+                "opacity": 0.2,
+                "overflow": "visible",
+                "resizeMode": "cover",
+              },
+            ]
+          }
+          testID="new-app-screen-header"
+        />
+        <Text
+          style={
+            Array [
+              Object {
+                "fontSize": 40,
+                "fontWeight": "700",
+                "textAlign": "center",
+              },
+              Object {
+                "color": "#000",
+              },
+            ]
+          }
+        >
+          Welcome to
+          
+
+          React Native
+        </Text>
+      </View>
+      <View
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        focusable={false}
+        nativeID="animatedComponent"
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#007AFF",
+                  "fontSize": 18,
+                  "margin": 8,
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            Cool Native   
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "marginTop": 32,
+              "paddingHorizontal": 24,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 24,
+                  "fontWeight": "600",
+                },
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            Step One
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "400",
+                  "marginTop": 8,
+                },
+                Object {
+                  "color": "#444",
+                },
+              ]
+            }
+          >
+            Edit 
+            <Text
+              style={
+                Object {
+                  "fontWeight": "700",
+                }
+              }
+            >
+              App.tsx
+            </Text>
+             to change this screen and then come back to see your edits
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "marginTop": 32,
+              "paddingHorizontal": 24,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 24,
+                  "fontWeight": "600",
+                },
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            See Your Changes
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "400",
+                  "marginTop": 8,
+                },
+                Object {
+                  "color": "#444",
+                },
+              ]
+            }
+          >
+            <Text>
+              Press 
+              <Text
+                style={
+                  Object {
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                Cmd + R
+              </Text>
+               in the simulator to reload your app's code.
+            </Text>
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "marginTop": 32,
+              "paddingHorizontal": 24,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 24,
+                  "fontWeight": "600",
+                },
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            Debug
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "400",
+                  "marginTop": 8,
+                },
+                Object {
+                  "color": "#444",
+                },
+              ]
+            }
+          >
+            <Text>
+              Press 
+              <Text
+                style={
+                  Object {
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                Cmd + D
+              </Text>
+               in the simulator or
+               
+              <Text
+                style={
+                  Object {
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                Shake
+              </Text>
+               your device to open the React Native debug menu.
+            </Text>
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "marginTop": 32,
+              "paddingHorizontal": 24,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 24,
+                  "fontWeight": "600",
+                },
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            Learn More
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "400",
+                  "marginTop": 8,
+                },
+                Object {
+                  "color": "#444",
+                },
+              ]
+            }
+          >
+            Read the docs to discover what to do next:
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "marginTop": 32,
+              "paddingHorizontal": 24,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 0.5,
+                },
+                Object {
+                  "backgroundColor": "#DAE1E7",
+                },
+              ]
+            }
+          />
+          <View
+            accessibilityRole="button"
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "flexWrap": "wrap",
+                "justifyContent": "space-between",
+                "opacity": 1,
+                "paddingVertical": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#1292B4",
+                  "flex": 2,
+                  "fontSize": 18,
+                  "fontWeight": "400",
+                }
+              }
+            >
+              The Basics
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "flex": 3,
+                    "fontSize": 18,
+                    "fontWeight": "400",
+                    "paddingVertical": 16,
+                  },
+                  Object {
+                    "color": "#444",
+                  },
+                ]
+              }
+            >
+              Explains a Hello World for React Native.
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 0.5,
+                },
+                Object {
+                  "backgroundColor": "#DAE1E7",
+                },
+              ]
+            }
+          />
+          <View
+            accessibilityRole="button"
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "flexWrap": "wrap",
+                "justifyContent": "space-between",
+                "opacity": 1,
+                "paddingVertical": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#1292B4",
+                  "flex": 2,
+                  "fontSize": 18,
+                  "fontWeight": "400",
+                }
+              }
+            >
+              Style
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "flex": 3,
+                    "fontSize": 18,
+                    "fontWeight": "400",
+                    "paddingVertical": 16,
+                  },
+                  Object {
+                    "color": "#444",
+                  },
+                ]
+              }
+            >
+              Covers how to use the prop named style which controls the visuals.
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 0.5,
+                },
+                Object {
+                  "backgroundColor": "#DAE1E7",
+                },
+              ]
+            }
+          />
+          <View
+            accessibilityRole="button"
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "flexWrap": "wrap",
+                "justifyContent": "space-between",
+                "opacity": 1,
+                "paddingVertical": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#1292B4",
+                  "flex": 2,
+                  "fontSize": 18,
+                  "fontWeight": "400",
+                }
+              }
+            >
+              Layout
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "flex": 3,
+                    "fontSize": 18,
+                    "fontWeight": "400",
+                    "paddingVertical": 16,
+                  },
+                  Object {
+                    "color": "#444",
+                  },
+                ]
+              }
+            >
+              React Native uses flexbox for layout, learn how it works.
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 0.5,
+                },
+                Object {
+                  "backgroundColor": "#DAE1E7",
+                },
+              ]
+            }
+          />
+          <View
+            accessibilityRole="button"
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "flexWrap": "wrap",
+                "justifyContent": "space-between",
+                "opacity": 1,
+                "paddingVertical": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#1292B4",
+                  "flex": 2,
+                  "fontSize": 18,
+                  "fontWeight": "400",
+                }
+              }
+            >
+              Components
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "flex": 3,
+                    "fontSize": 18,
+                    "fontWeight": "400",
+                    "paddingVertical": 16,
+                  },
+                  Object {
+                    "color": "#444",
+                  },
+                ]
+              }
+            >
+              The full list of components and APIs inside React Native.
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 0.5,
+                },
+                Object {
+                  "backgroundColor": "#DAE1E7",
+                },
+              ]
+            }
+          />
+          <View
+            accessibilityRole="button"
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "flexWrap": "wrap",
+                "justifyContent": "space-between",
+                "opacity": 1,
+                "paddingVertical": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#1292B4",
+                  "flex": 2,
+                  "fontSize": 18,
+                  "fontWeight": "400",
+                }
+              }
+            >
+              Navigation
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "flex": 3,
+                    "fontSize": 18,
+                    "fontWeight": "400",
+                    "paddingVertical": 16,
+                  },
+                  Object {
+                    "color": "#444",
+                  },
+                ]
+              }
+            >
+              How to handle moving between screens inside your application.
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 0.5,
+                },
+                Object {
+                  "backgroundColor": "#DAE1E7",
+                },
+              ]
+            }
+          />
+          <View
+            accessibilityRole="button"
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "flexWrap": "wrap",
+                "justifyContent": "space-between",
+                "opacity": 1,
+                "paddingVertical": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#1292B4",
+                  "flex": 2,
+                  "fontSize": 18,
+                  "fontWeight": "400",
+                }
+              }
+            >
+              Networking
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "flex": 3,
+                    "fontSize": 18,
+                    "fontWeight": "400",
+                    "paddingVertical": 16,
+                  },
+                  Object {
+                    "color": "#444",
+                  },
+                ]
+              }
+            >
+              How to use the Fetch API in React Native.
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 0.5,
+                },
+                Object {
+                  "backgroundColor": "#DAE1E7",
+                },
+              ]
+            }
+          />
+          <View
+            accessibilityRole="button"
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "flexWrap": "wrap",
+                "justifyContent": "space-between",
+                "opacity": 1,
+                "paddingVertical": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#1292B4",
+                  "flex": 2,
+                  "fontSize": 18,
+                  "fontWeight": "400",
+                }
+              }
+            >
+              Help
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "flex": 3,
+                    "fontSize": 18,
+                    "fontWeight": "400",
+                    "paddingVertical": 16,
+                  },
+                  Object {
+                    "color": "#444",
+                  },
+                ]
+              }
+            >
+              Need more help? There are many other React Native developers who may have the answer.
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 0.5,
+                },
+                Object {
+                  "backgroundColor": "#DAE1E7",
+                },
+              ]
+            }
+          />
+          <View
+            accessibilityRole="button"
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "flexWrap": "wrap",
+                "justifyContent": "space-between",
+                "opacity": 1,
+                "paddingVertical": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#1292B4",
+                  "flex": 2,
+                  "fontSize": 18,
+                  "fontWeight": "400",
+                }
+              }
+            >
+              Follow us on Twitter
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "flex": 3,
+                    "fontSize": 18,
+                    "fontWeight": "400",
+                    "paddingVertical": 16,
+                  },
+                  Object {
+                    "color": "#444",
+                  },
+                ]
+              }
+            >
+              Stay in touch with the community, join in on Q&As and more by following React Native on Twitter.
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;
