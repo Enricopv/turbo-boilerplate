@@ -40,4 +40,7 @@ scripts": {
 - Install: `yarn`
 - Run: `yarn dev`
 
+## Long jest-haste-map Issue
+
+If you are running into ths problem, try running `yarn clean:watchman`. 
 
