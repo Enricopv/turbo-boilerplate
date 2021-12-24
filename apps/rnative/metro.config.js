@@ -14,21 +14,22 @@ function findSharedPackages(workspaceRoot, sharedPackagesFolder) {
     path.resolve(workspaceRoot, packageFolder),
   );
 
-  const hey = sharedPackageRoots.map(sharedPackageRoot =>
-    readdirSync(sharedPackageRoot, {
-      withFileTypes: true,
-    })
-      .filter(dir => dir.isDirectory() && !dir.name.startsWith('.'))
-      .map(dir => dir.name)
-      .map(packageFolder => {
-        const packagePath = path.resolve(sharedPackageRoot, packageFolder);
+  return sharedPackageRoots
+    .map(sharedPackageRoot =>
+      readdirSync(sharedPackageRoot, {
+        withFileTypes: true,
+      })
+        .filter(dir => dir.isDirectory() && !dir.name.startsWith('.'))
+        .map(dir => dir.name)
+        .map(packageFolder => {
+          const packagePath = path.resolve(sharedPackageRoot, packageFolder);
 
-        const packageName = require(`${packagePath}/package.json`).name;
+          const packageName = require(`${packagePath}/package.json`).name;
 
-        return {packageName, packagePath};
-      }),
-  );
-  return hey.flat();
+          return {packageName, packagePath};
+        }),
+    )
+    .flat();
 }
 
 /**
