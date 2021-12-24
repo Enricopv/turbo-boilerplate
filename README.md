@@ -11,9 +11,11 @@
     - blog: Remix
     - rnative: React Native
     - xpo: Expo
-  - libs
+  - packages
     - ui: react lib
     - ui-native: react-native lib
+  - wrappers
+    - bp-request: sample js wrapper lib for axios
 
 # How to use
 
