@@ -1,13 +1,9 @@
 const path = require('path');
 const {readdirSync} = require('fs');
-// const config = getDefaultConfig(__dirname);
 const projectRoot = __dirname;
 const workspaceRoot = path.resolve(__dirname, '../..');
 const rootPackage = require('./package.json');
-
-const config = {
-  resolver: {},
-};
+const workspacePackage = require('../../package.json');
 
 function findSharedPackages(workspaceRoot, sharedPackagesFolder) {
   const sharedPackageRoots = sharedPackagesFolder.map(packageFolder =>
@@ -32,9 +28,18 @@ function findSharedPackages(workspaceRoot, sharedPackagesFolder) {
     .flat();
 }
 
+const config = {
+  resolver: {},
+};
+
 /**
  * Get monorepo depencies, flagged by a "*"
  */
+
+const monoRepoFolders = workspacePackage.workspaces.packages.map(pkg =>
+  pkg.substring(0, pkg.search(RegExp('\\/\\*'))),
+);
+
 const dependencies = {
   ...rootPackage.dependencies,
   ...rootPackage.devDependencies,
@@ -44,11 +49,10 @@ const usedDeps = Object.keys(dependencies).filter(
   dep => dependencies[dep] === '*',
 );
 
-const allRepoPackages = findSharedPackages(path.resolve(workspaceRoot), [
-  'packages',
-  'apps',
-  'wrappers',
-]);
+const allRepoPackages = findSharedPackages(
+  path.resolve(workspaceRoot),
+  monoRepoFolders,
+);
 
 /**
  * We don't need to watch the whole repo as it can get pretty large over time.
