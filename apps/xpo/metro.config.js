@@ -5,6 +5,13 @@ const config = getDefaultConfig(__dirname);
 const projectRoot = __dirname;
 const workspaceRoot = path.resolve(__dirname, '../..');
 const rootPackage = require('./package.json');
+const workspacePackage = require('../../package.json');
+
+
+const monoRepoFolders = workspacePackage.workspaces.packages.map(pkg =>
+  pkg.substring(0, pkg.search(RegExp('\\/\\*'))),
+);
+
 
 function findSharedPackages(workspaceRoot, sharedPackagesFolder) {
   const sharedPackageRoots = sharedPackagesFolder.map(packageFolder =>
@@ -40,10 +47,7 @@ const usedDeps = Object.keys(dependencies).filter(
   dep => dependencies[dep] === '*',
 );
 
-const allRepoPackages = findSharedPackages(path.resolve(workspaceRoot), [
-  'packages',
-  'apps',
-]);
+const allRepoPackages = findSharedPackages(path.resolve(workspaceRoot), monoRepoFolders);
 
 /**
  * We don't need to watch the whole repo as it can get pretty large over time.
