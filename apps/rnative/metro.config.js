@@ -1,36 +1,45 @@
-const {getDefaultConfig} = require('@expo/metro-config');
 const path = require('path');
 const {readdirSync} = require('fs');
-const config = getDefaultConfig(__dirname);
 const projectRoot = __dirname;
 const workspaceRoot = path.resolve(__dirname, '../..');
 const rootPackage = require('./package.json');
+const workspacePackage = require('../../package.json');
 
 function findSharedPackages(workspaceRoot, sharedPackagesFolder) {
   const sharedPackageRoots = sharedPackagesFolder.map(packageFolder =>
     path.resolve(workspaceRoot, packageFolder),
   );
 
-  const hey = sharedPackageRoots.map(sharedPackageRoot =>
-    readdirSync(sharedPackageRoot, {
-      withFileTypes: true,
-    })
-      .filter(dir => dir.isDirectory() && !dir.name.startsWith('.'))
-      .map(dir => dir.name)
-      .map(packageFolder => {
-        const packagePath = path.resolve(sharedPackageRoot, packageFolder);
+  return sharedPackageRoots
+    .map(sharedPackageRoot =>
+      readdirSync(sharedPackageRoot, {
+        withFileTypes: true,
+      })
+        .filter(dir => dir.isDirectory() && !dir.name.startsWith('.'))
+        .map(dir => dir.name)
+        .map(packageFolder => {
+          const packagePath = path.resolve(sharedPackageRoot, packageFolder);
 
-        const packageName = require(`${packagePath}/package.json`).name;
+          const packageName = require(`${packagePath}/package.json`).name;
 
-        return {packageName, packagePath};
-      }),
-  );
-  return hey.flat();
+          return {packageName, packagePath};
+        }),
+    )
+    .flat();
 }
+
+const config = {
+  resolver: {},
+};
 
 /**
  * Get monorepo depencies, flagged by a "*"
  */
+
+const monoRepoFolders = workspacePackage.workspaces.packages.map(pkg =>
+  pkg.substring(0, pkg.search(RegExp('\\/\\*'))),
+);
+
 const dependencies = {
   ...rootPackage.dependencies,
   ...rootPackage.devDependencies,
@@ -40,10 +49,10 @@ const usedDeps = Object.keys(dependencies).filter(
   dep => dependencies[dep] === '*',
 );
 
-const allRepoPackages = findSharedPackages(path.resolve(workspaceRoot), [
-  'packages',
-  'apps',
-]);
+const allRepoPackages = findSharedPackages(
+  path.resolve(workspaceRoot),
+  monoRepoFolders,
+);
 
 /**
  * We don't need to watch the whole repo as it can get pretty large over time.
