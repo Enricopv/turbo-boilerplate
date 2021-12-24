@@ -1,10 +1,13 @@
-const {getDefaultConfig} = require('@expo/metro-config');
 const path = require('path');
 const {readdirSync} = require('fs');
-const config = getDefaultConfig(__dirname);
+// const config = getDefaultConfig(__dirname);
 const projectRoot = __dirname;
 const workspaceRoot = path.resolve(__dirname, '../..');
 const rootPackage = require('./package.json');
+
+const config = {
+  resolver: {},
+};
 
 function findSharedPackages(workspaceRoot, sharedPackagesFolder) {
   const sharedPackageRoots = sharedPackagesFolder.map(packageFolder =>
