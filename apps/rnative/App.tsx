@@ -19,7 +19,7 @@ import {
   View,
 } from 'react-native';
 import {Button} from 'ui-native';
-import axios from 'axios';
+import * as requestWrapper from 'bp-request';
 import {
   Colors,
   DebugInstructions,
@@ -63,9 +63,13 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
   React.useEffect(() => {
-    axios.get('https://pokeapi.co/api/v2/pokemon/ditto').then(result => {
-      console.log('result', result?.data?.abilities);
-    });
+    requestWrapper
+      .get<{}, {data: {abilities: any}}>(
+        'https://pokeapi.co/api/v2/pokemon/ditto',
+      )
+      .then(result => {
+        console.log('result', result?.data?.abilities);
+      });
   }, []);
 
   return (

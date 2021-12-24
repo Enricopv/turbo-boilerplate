@@ -43,6 +43,7 @@ const usedDeps = Object.keys(dependencies).filter(
 const allRepoPackages = findSharedPackages(path.resolve(workspaceRoot), [
   'packages',
   'apps',
+  'wrappers',
 ]);
 
 /**
