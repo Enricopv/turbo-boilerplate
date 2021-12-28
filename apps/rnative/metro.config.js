@@ -33,7 +33,7 @@ const config = {
 };
 
 /**
- * Get monorepo depencies, flagged by a "*"
+ * Get monorepo dependencies, flagged by a "*"
  */
 
 const monoRepoFolders = workspacePackage.workspaces.packages.map(pkg =>
@@ -111,6 +111,15 @@ config.resolver.blockList = [...unusedRepoPackages, ...usedRepoPackages];
  */
 config.resolver.extraNodeModules = {
   'react-native': path.resolve(__dirname, 'node_modules/react-native'),
+  '@react-navigation/native': path.resolve(
+    __dirname,
+    '../../node_modules/@react-navigation/native',
+  ),
+
+  '@react-navigation/native-stack': path.resolve(
+    __dirname,
+    '../../node_modules/@react-navigation/native-stack',
+  ),
 };
 
 module.exports = config;
