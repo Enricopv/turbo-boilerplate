@@ -1,23 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-// import {Button} from "ui-native"
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * Generated with the TypeScript template
+ * https://github.com/react-native-community/react-native-template-typescript
+ *
+ * @format
+ */
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your 123!</Text>
-      {/* <Button title="XPO BUTTON"/> */}
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+ import {NavigationContainer} from '@react-navigation/native';
+ import {createNativeStackNavigator} from '@react-navigation/native-stack';
+ import * as React from 'react';
+ import DeafultReactNativeScreen from './src/screens/DefaultReactNativeScreen';
+ import DetailsScreen from './src/screens/DetailsScreen';
+ import {RootStackParamList} from './src/types/navigation-types';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+ const Stack = createNativeStackNavigator<RootStackParamList>();
+
+ function App() {
+   return (
+     <NavigationContainer>
+       <Stack.Navigator>
+         <Stack.Screen name="Home" component={DeafultReactNativeScreen} />
+         <Stack.Screen name="Details" component={DetailsScreen} />
+       </Stack.Navigator>
+     </NavigationContainer>
+   );
+ }
+
+ export default App;

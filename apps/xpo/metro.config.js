@@ -109,6 +109,14 @@ config.resolver.blockList = [...unusedRepoPackages, ...usedRepoPackages];
  */
 config.resolver.extraNodeModules = {
   'react-native': path.resolve(__dirname, 'node_modules/react-native'),
+  'react-native-screens': path.resolve(__dirname, 'node_modules/react-native-screens'),
+  'react-native-safe-area-context': path.resolve(__dirname, 'node_modules/react-native-safe-area-context'),
+  '@react-navigation/native': path.resolve(__dirname, 'node_modules/@react-navigation/native'),
+  '@react-navigation/native-stack': path.resolve(__dirname, 'node_modules/@react-navigation/native-stack'),
 };
+
+config.update = (d) => {
+  console.log('weoew',d)
+}
 
 module.exports = config;
