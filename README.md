@@ -51,7 +51,8 @@ scripts": {
 
 - Clone: `git clone https://github.com/Enricopv/turbo-boilerplate.git {name}`
 - Install: `yarn`
-- Run: `yarn dev`
+- Run: `yarn dev` // to run all projects
+- Run: `yarn dev --scope={name}` // to run a single project. Running this may not show your live updates from the ui packages if they are not also running too.
 
 
 
