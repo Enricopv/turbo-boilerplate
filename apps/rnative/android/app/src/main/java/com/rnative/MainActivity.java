@@ -2,6 +2,12 @@ package com.rnative;
 
 import com.facebook.react.ReactActivity;
 
+/**
+   * Added for react-navigation
+   * https://reactnavigation.org/docs/getting-started/
+   */
+import android.os.Bundle;
+
 public class MainActivity extends ReactActivity {
 
   /**
@@ -11,5 +17,14 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "rnative";
+  }
+
+  /**
+   * Added for react-navigation
+   * https://reactnavigation.org/docs/getting-started/
+   */
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
   }
 }
