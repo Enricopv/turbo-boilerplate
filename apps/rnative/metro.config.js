@@ -73,7 +73,7 @@ config.watchFolders = [
 /**
  * Make sure to include app & package node_modules
  */
-config.resolver.nodeModulesPath = [
+config.resolver.nodeModulesPaths = [
   path.resolve(projectRoot, 'node_modules'),
   path.resolve(workspaceRoot, 'node_modules'),
 ];
