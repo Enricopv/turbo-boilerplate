@@ -6,10 +6,6 @@ const workspaceRoot = path.resolve(__dirname, '../..');
 const rootPackage = require('./package.json');
 const workspacePackage = require('../../package.json');
 
-const monoRepoFolders = workspacePackage.workspaces.packages.map(pkg =>
-  pkg.substring(0, pkg.search(RegExp('\\/\\*'))),
-);
-
 function findSharedPackages(workspaceRoot, sharedPackagesFolder) {
   const sharedPackageRoots = sharedPackagesFolder.map(packageFolder =>
     path.resolve(workspaceRoot, packageFolder),
@@ -35,9 +31,15 @@ function findSharedPackages(workspaceRoot, sharedPackagesFolder) {
 
 const config = getDefaultConfig(__dirname);
 
+console.log('default config', config.resolver);
+
 /**
  * Get monorepo depencies, flagged by a "*"
  */
+const monoRepoFolders = workspacePackage.workspaces.packages.map(pkg =>
+  pkg.substring(0, pkg.search(RegExp('\\/\\*'))),
+);
+
 const dependencies = {
   ...rootPackage.dependencies,
   ...rootPackage.devDependencies,
@@ -76,6 +78,8 @@ config.resolver.nodeModulesPath = [
   path.resolve(workspaceRoot, 'node_modules'),
 ];
 
+console.log('config resolvers', config.resolver);
+
 /**
  * We need to block other deps from conflicting with this project's node_modules
  * While we're at it, I figure why not block the whole folder.
@@ -102,6 +106,10 @@ const usedRepoPackages = allRepoPackages
 
 // config.resolver.blockList = blockList;
 
+console.log('usedRepoPackages', usedRepoPackages);
+
+console.log('unusedRepoPackages', unusedRepoPackages);
+
 config.resolver.blockList = [...unusedRepoPackages, ...usedRepoPackages];
 
 /**
@@ -109,14 +117,22 @@ config.resolver.blockList = [...unusedRepoPackages, ...usedRepoPackages];
  */
 config.resolver.extraNodeModules = {
   'react-native': path.resolve(__dirname, 'node_modules/react-native'),
-  'react-native-screens': path.resolve(__dirname, 'node_modules/react-native-screens'),
-  'react-native-safe-area-context': path.resolve(__dirname, 'node_modules/react-native-safe-area-context'),
-  '@react-navigation/native': path.resolve(__dirname, 'node_modules/@react-navigation/native'),
-  '@react-navigation/native-stack': path.resolve(__dirname, 'node_modules/@react-navigation/native-stack'),
+  'react-native-screens': path.resolve(
+    __dirname,
+    'node_modules/react-native-screens',
+  ),
+  'react-native-safe-area-context': path.resolve(
+    __dirname,
+    'node_modules/react-native-safe-area-context',
+  ),
+  '@react-navigation/native': path.resolve(
+    __dirname,
+    'node_modules/@react-navigation/native',
+  ),
+  '@react-navigation/native-stack': path.resolve(
+    __dirname,
+    'node_modules/@react-navigation/native-stack',
+  ),
 };
-
-config.update = (d) => {
-  console.log('weoew',d)
-}
 
 module.exports = config;
