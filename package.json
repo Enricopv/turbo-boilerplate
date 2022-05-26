@@ -7,6 +7,16 @@
       "packages/*",
       "apps/*",
       "wrappers/*"
+    ],
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**",
+      "**/@react-native-*",
+      "**/@react-native-*/**",
+      "**/react-native-*",
+      "**/react-native-*/**",
+      "**/*react-navigation/native*",
+      "**/*react-navigation/native*/**"
     ]
   },
   "scripts": {
