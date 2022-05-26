@@ -9,7 +9,8 @@
     "start": "reactx-native start",
     "test": "jest -u",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "clean": "rm -rf .turbo && rm -rf node_modules"
+    "clean": "rm -rf .turbo && rm -rf node_modules",
+    "pod:x86": "cd ios && arch -x86_64 pod install"
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.10",
