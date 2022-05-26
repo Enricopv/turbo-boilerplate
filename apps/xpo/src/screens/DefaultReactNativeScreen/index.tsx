@@ -11,14 +11,7 @@
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import * as requestWrapper from 'bp-request';
 import * as React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {ScrollView, StatusBar, Text, useColorScheme, View} from 'react-native';
 import {
   Colors,
   DebugInstructions,
@@ -58,7 +51,7 @@ const DeafultReactNativeScreen = (
   useTestWrapper();
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <View style={backgroundStyle}>
       <StatusBar />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
@@ -86,7 +79,7 @@ const DeafultReactNativeScreen = (
           <LearnMoreLinks />
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 

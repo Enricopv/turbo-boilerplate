@@ -7,24 +7,22 @@
  *
  * @format
  */
- import {NavigationContainer} from '@react-navigation/native';
- import {createNativeStackNavigator} from '@react-navigation/native-stack';
- import * as React from 'react';
- import DeafultReactNativeScreen from './src/screens/DefaultReactNativeScreen';
- import DetailsScreen from './src/screens/DetailsScreen';
- import {RootStackParamList} from './src/types/navigation-types';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import DeafultReactNativeScreen from './src/screens/DefaultReactNativeScreen';
+import DetailsScreen from './src/screens/DetailsScreen';
 
- const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator();
 
- function App() {
-   return (
-     <NavigationContainer>
-       <Stack.Navigator>
-         <Stack.Screen name="Home" component={DeafultReactNativeScreen} />
-         <Stack.Screen name="Details" component={DetailsScreen} />
-       </Stack.Navigator>
-     </NavigationContainer>
-   );
- }
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={DeafultReactNativeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
- export default App;
+export default App;

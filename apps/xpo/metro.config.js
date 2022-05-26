@@ -1,138 +1,19 @@
-const {getDefaultConfig} = require('@expo/metro-config');
+// Learn more https://docs.expo.io/guides/customizing-metro
+const {getDefaultConfig} = require('expo/metro-config');
 const path = require('path');
-const {readdirSync} = require('fs');
-const projectRoot = __dirname;
+
+// Find the workspace root, this can be replaced with `find-yarn-workspace-root`
 const workspaceRoot = path.resolve(__dirname, '../..');
-const rootPackage = require('./package.json');
-const workspacePackage = require('../../package.json');
+const projectRoot = __dirname;
 
-function findSharedPackages(workspaceRoot, sharedPackagesFolder) {
-  const sharedPackageRoots = sharedPackagesFolder.map(packageFolder =>
-    path.resolve(workspaceRoot, packageFolder),
-  );
+const config = getDefaultConfig(projectRoot);
 
-  return sharedPackageRoots
-    .map(sharedPackageRoot =>
-      readdirSync(sharedPackageRoot, {
-        withFileTypes: true,
-      })
-        .filter(dir => dir.isDirectory() && !dir.name.startsWith('.'))
-        .map(dir => dir.name)
-        .map(packageFolder => {
-          const packagePath = path.resolve(sharedPackageRoot, packageFolder);
-
-          const packageName = require(`${packagePath}/package.json`).name;
-
-          return {packageName, packagePath};
-        }),
-    )
-    .flat();
-}
-
-const config = getDefaultConfig(__dirname);
-
-console.log('default config', config.resolver);
-
-/**
- * Get monorepo depencies, flagged by a "*"
- */
-const monoRepoFolders = workspacePackage.workspaces.packages.map(pkg =>
-  pkg.substring(0, pkg.search(RegExp('\\/\\*'))),
-);
-
-const dependencies = {
-  ...rootPackage.dependencies,
-  ...rootPackage.devDependencies,
-};
-
-const usedDeps = Object.keys(dependencies).filter(
-  dep => dependencies[dep] === '*',
-);
-
-const allRepoPackages = findSharedPackages(
-  path.resolve(workspaceRoot),
-  monoRepoFolders,
-);
-
-/**
- * We don't need to watch the whole repo as it can get pretty large over time.
- * We just want to follow:
- * - Root node_modules
- * - Other libraries in our monorepo
- */
-
-const watchFolders = allRepoPackages
-  .filter(pkg => Boolean(usedDeps.find(dep => pkg.packageName === dep)))
-  .map(pkg => pkg.packagePath);
-
-config.watchFolders = [
-  path.resolve(__dirname, '../../node_modules'),
-  ...watchFolders,
-];
-
-/**
- * Make sure to include app & package node_modules
- */
-config.resolver.nodeModulesPath = [
+// 1. Watch all files within the monorepo
+config.watchFolders = [workspaceRoot];
+// 2. Let Metro know where to resolve packages, and in what order
+config.resolver.nodeModulesPaths = [
   path.resolve(projectRoot, 'node_modules'),
   path.resolve(workspaceRoot, 'node_modules'),
 ];
-
-console.log('config resolvers', config.resolver);
-
-/**
- * We need to block other deps from conflicting with this project's node_modules
- * While we're at it, I figure why not block the whole folder.
- * 1. We block the folders of our other apps & libraries that aren't a dependency.
- * 2. The apps that are a dependency, we block their node_modules so as to not conflict
- *    with this project's react-native package and other dependencies it uses.
- * 3. Omitted here is this apps/package's project directory, so we can keep watching for changes here.
- */
-
-const unusedRepoPackages = allRepoPackages
-  .filter(pkg => pkg.packageName !== rootPackage.name)
-  .filter(pkg => !usedDeps.find(dep => pkg.packageName === dep))
-  .map(
-    ({packagePath}) =>
-      new RegExp(`^${escape(path.resolve(packagePath))}\\/.*$`),
-  );
-const usedRepoPackages = allRepoPackages
-  .filter(pkg => pkg.packageName !== rootPackage.name)
-  .filter(pkg => usedDeps.find(dep => pkg.packageName === dep))
-  .map(
-    ({packagePath}) =>
-      new RegExp(`^${escape(path.resolve(packagePath, 'node_modules'))}\\/.*$`),
-  );
-
-// config.resolver.blockList = blockList;
-
-console.log('usedRepoPackages', usedRepoPackages);
-
-console.log('unusedRepoPackages', unusedRepoPackages);
-
-config.resolver.blockList = [...unusedRepoPackages, ...usedRepoPackages];
-
-/**
- * We make sure to point to where our react-native module is.
- */
-config.resolver.extraNodeModules = {
-  'react-native': path.resolve(__dirname, 'node_modules/react-native'),
-  'react-native-screens': path.resolve(
-    __dirname,
-    'node_modules/react-native-screens',
-  ),
-  'react-native-safe-area-context': path.resolve(
-    __dirname,
-    'node_modules/react-native-safe-area-context',
-  ),
-  '@react-navigation/native': path.resolve(
-    __dirname,
-    'node_modules/@react-navigation/native',
-  ),
-  '@react-navigation/native-stack': path.resolve(
-    __dirname,
-    'node_modules/@react-navigation/native-stack',
-  ),
-};
 
 module.exports = config;
